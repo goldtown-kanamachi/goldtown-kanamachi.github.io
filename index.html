@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gold Town Kanamachi | Private Tokyo Night Stay | Rooms 402, 405, 503</title>
+  <meta name="description" content="Private rooms near JR Kanamachi Station in Tokyo. Best suited for adult solo travelers, two friends, business trips, events, and nightlife-focused stays. Rooms 402, 405, and 503 available on Airbnb." />
+
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --bg-soft: #151923;
+      --panel: #1d2230;
+      --text: #f6f0e6;
+      --muted: #b9b1a3;
+      --gold: #caa45c;
+      --gold-light: #e4c06f;
+      --line: rgba(255,255,255,.13);
+      --white: #fff;
+      --black: #050505;
+      --warning: rgba(202,164,92,.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      background: rgba(13,15,20,.86);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 68px;
+      background:
+        radial-gradient(circle at 82% 20%, rgba(202,164,92,.25), transparent 34%),
+        linear-gradient(115deg, rgba(3,4,7,.96), rgba(13,15,20,.76), rgba(13,15,20,.94)),
+        url("https://a0.muscache.com/im/pictures/hosting/Hosting-1698261858443655288/original/38656529-b82f-4a2e-be93-9dc72d00c9f6.jpeg?im_w=720") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 190px;
+      background: linear-gradient(transparent, var(--bg));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      padding: 88px 0 74px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: 1.07;
+      letter-spacing: .02em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4.2vw, 50px);
+      line-height: 1.22;
+      letter-spacing: .01em;
+    }
+
+    h3 {
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin: 0 0 30px;
+      color: #eee5d7;
+      font-size: clamp(18px, 2.2vw, 24px);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 36px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-points li {
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,.20);
+      border-radius: 999px;
+      background: rgba(255,255,255,.075);
+      color: #f1e9dc;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 26px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #15120b;
+      font-weight: 900;
+      box-shadow: 0 14px 36px rgba(202,164,92,.26);
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--gold-light);
+    }
+
+    .btn.outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.30);
+      box-shadow: none;
+    }
+
+    .btn.outline:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-top: 22px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card,
+    .room-card,
+    .guide-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+      box-shadow: 0 18px 60px rgba(0,0,0,.28);
+    }
+
+    .card {
+      padding: 26px;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--white);
+      font-size: 19px;
+    }
+
+    .card p,
+    .guide-card p,
+    .room-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .target,
+    .flow {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(202,164,92,.12), transparent 32%),
+        var(--bg-soft);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .target-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .target-item {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.045);
+      color: #f0eadf;
+      font-weight: 850;
+    }
+
+    .target-item::before {
+      content: "✓";
+      color: var(--gold);
+      margin-right: 10px;
+    }
+
+    .rooms {
+      background: linear-gradient(180deg, var(--bg), #111621);
+    }
+
+    .room-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .room-image {
+      position: relative;
+      height: 265px;
+      background: #111;
+      overflow: hidden;
+    }
+
+    .room-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .room-card:hover .room-image img {
+      transform: scale(1.035);
+    }
+
+    .floor-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 7px 13px;
+      border: 1px solid rgba(255,255,255,.20);
+      border-radius: 999px;
+      background: rgba(5,5,5,.74);
+      color: var(--gold);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .room-no {
+      position: absolute;
+      right: 18px;
+      bottom: 14px;
+      color: rgba(255,255,255,.90);
+      font-size: 56px;
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: .04em;
+      text-shadow: 0 8px 28px rgba(0,0,0,.55);
+    }
+
+    .room-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 26px;
+    }
+
+    .room-body h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .room-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .room-tags span {
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.045);
+      color: #e9dfcf;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .room-body .btn {
+      margin-top: 24px;
+    }
+
+    .location {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .location-box {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    }
+
+    .notice {
+      margin-top: 28px;
+      padding: 22px 24px;
+      border: 1px solid rgba(202,164,92,.42);
+      border-radius: 18px;
+      background: var(--warning);
+      color: #eadfc9;
+    }
+
+    .access-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .access-list div {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.045);
+      color: #eee7da;
+      font-weight: 850;
+    }
+
+    .guide-card {
+      padding: 24px;
+    }
+
+    .guide-card h3 {
+      margin-bottom: 8px;
+      color: var(--white);
+      font-size: 20px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .step {
+      min-height: 150px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #111;
+      font-weight: 950;
+    }
+
+    .step strong {
+      display: block;
+      line-height: 1.5;
+    }
+
+    .faq-wrap {
+      max-width: 880px;
+    }
+
+    details {
+      padding: 20px 22px;
+      margin-bottom: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.045);
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    details p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(202,164,92,.22), transparent 40%),
+        #070707;
+      border-top: 1px solid var(--line);
+    }
+
+    .cta h2 {
+      margin-bottom: 18px;
+      font-size: clamp(36px, 5vw, 64px);
+    }
+
+    .cta p {
+      margin-bottom: 32px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .booking-buttons {
+      justify-content: center;
+    }
+
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      background: #050505;
+      color: #777;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .grid-3,
+      .grid-2,
+      .target-list,
+      .access-list,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 78px 0 70px;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-points li {
+        width: 100%;
+      }
+
+      .location-box {
+        padding: 24px;
+      }
+
+      .room-no {
+        font-size: 44px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Gold Town <span>Kanamachi</span></a>
+      <div class="nav-links">
+        <a href="#concept">Concept</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#location">Location</a>
+        <a href="#guide">Guide</a>
+        <a href="#faq">FAQ</a>
+        <a href="#booking">Book</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Private Tokyo Night Stay</div>
+        <h1>Stay out late.<br>Rest in private.</h1>
+        <p class="hero-lead">
+          A simple and private Tokyo stay near Kanamachi Station.
+          Best suited for adult solo travelers, two friends, business trips, events, and nightlife-focused stays.
+        </p>
+
+        <ul class="hero-points">
+          <li>Rooms 402, 405, 503</li>
+          <li>4th & 5th floor rooms</li>
+          <li>Self check-in</li>
+          <li>Fast Wi-Fi</li>
+          <li>Private apartment-style rooms</li>
+          <li>Convenient for Tokyo nightlife</li>
+        </ul>
+
+        <div class="btn-row">
+          <a href="#rooms" class="btn">Choose a Room</a>
+          <a href="#booking" class="btn outline">Book on Airbnb</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="concept">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Concept</div>
+          <h2>A practical Tokyo base for solo travelers, two friends, and business stays.</h2>
+          <p class="lead">
+            Enjoy Tokyo until late at night, come back at your own pace, and relax in a private room.
+            This is not a luxury hotel or a quiet residential retreat. It is a convenient, apartment-style stay for guests who value location, privacy, and flexibility.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <strong>Good for solo stays</strong>
+            <p>Use the room like a compact private hotel room, with the comfort of an apartment-style space.</p>
+          </div>
+          <div class="card">
+            <strong>Good for two friends</strong>
+            <p>A practical option for friends visiting Tokyo for food, drinks, events, concerts, or nightlife.</p>
+          </div>
+          <div class="card">
+            <strong>Flexible arrival</strong>
+            <p>Self check-in makes it easier to arrive after sightseeing, dinner, work, or late-night plans.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="target">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Recommended for</div>
+          <h2>This stay is a good fit for guests like these.</h2>
+        </div>
+
+        <div class="target-list">
+          <div class="target-item">Adult solo travelers who want to enjoy Tokyo freely</div>
+          <div class="target-item">Two friends traveling together</div>
+          <div class="target-item">Business travelers who prefer a private apartment-style room</div>
+          <div class="target-item">Guests coming back late after concerts, events, or sports</div>
+          <div class="target-item">Travelers who want easy access to food, drinks, and nightlife</div>
+          <div class="target-item">Guests who understand an active nighttime neighborhood</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Room features</div>
+          <h2>Private rooms with the essentials for a comfortable Tokyo stay.</h2>
+          <p class="lead">
+            Each room is designed for short stays, business trips, and multi-day travel.
+            You can relax privately, use Wi-Fi, prepare simple food, and do laundry during your stay.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <strong>Fast Wi-Fi</strong>
+            <p>Useful for work, video calls, streaming, and travel planning.</p>
+          </div>
+          <div class="card">
+            <strong>Mini kitchen & microwave</strong>
+            <p>Convenient for snacks, light meals, and late-night food.</p>
+          </div>
+          <div class="card">
+            <strong>Washing machine</strong>
+            <p>Helpful for multi-day stays or travelers packing light.</p>
+          </div>
+          <div class="card">
+            <strong>Refrigerator</strong>
+            <p>Store drinks, food, and convenience-store items.</p>
+          </div>
+          <div class="card">
+            <strong>Air conditioning</strong>
+            <p>Stay comfortable throughout the year.</p>
+          </div>
+          <div class="card">
+            <strong>Self check-in</strong>
+            <p>Arrive without meeting staff in person after your day in Tokyo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rooms" class="rooms">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Rooms</div>
+          <h2>Choose from Rooms 402, 405, and 503.</h2>
+          <p class="lead">
+            Rooms 402 and 405 are on the 4th floor. Room 503 is on the 5th floor.
+            Please note that there is no elevator in the building.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+
+          <article class="room-card">
+            <div class="room-image">
+              <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1698201420733348060/original/736dc4c8-55de-4d13-b1f6-bb669675e1c3.jpeg?im_w=720" alt="Room 402 at Gold Town Kanamachi" loading="lazy" />
+              <div class="floor-badge">4F</div>
+              <div class="room-no">402</div>
+            </div>
+            <div class="room-body">
+              <h3>Room 402</h3>
+              <div class="room-tags">
+                <span>Double bed</span>
+                <span>Solo traveler</span>
+                <span>Business stay</span>
+              </div>
+              <p>
+                A compact private room with a double bed, useful for solo travelers, business trips, and guests who want a simple base near Kanamachi.
+              </p>
+              <a href="https://www.airbnb.jp/rooms/1698201420733348060" class="btn" target="_blank" rel="noopener">View Room 402 on Airbnb</a>
+            </div>
+          </article>
+
+          <article class="room-card">
+            <div class="room-image">
+              <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1698261858443655288/original/0eff7818-e09a-445e-b8ec-0db8857bd9bf.jpeg?im_w=720" alt="Room 405 at Gold Town Kanamachi" loading="lazy" />
+              <div class="floor-badge">4F</div>
+              <div class="room-no">405</div>
+            </div>
+            <div class="room-body">
+              <h3>Room 405</h3>
+              <div class="room-tags">
+                <span>Double bed</span>
+                <span>Solo traveler</span>
+                <span>Nightlife base</span>
+              </div>
+              <p>
+                A clean 4th-floor room with a double bed. A practical choice for solo travelers or two close friends who plan to enjoy Tokyo until late.
+              </p>
+              <a href="https://www.airbnb.jp/rooms/1698261858443655288" class="btn" target="_blank" rel="noopener">View Room 405 on Airbnb</a>
+            </div>
+          </article>
+
+          <article class="room-card">
+            <div class="room-image">
+              <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1698319735996383815/original/50ba640b-4ef0-4093-a663-e9fa379d9809.jpeg?im_w=720" alt="Room 503 at Gold Town Kanamachi" loading="lazy" />
+              <div class="floor-badge">5F</div>
+              <div class="room-no">503</div>
+            </div>
+            <div class="room-body">
+              <h3>Room 503</h3>
+              <div class="room-tags">
+                <span>Twin beds</span>
+                <span>Two friends</span>
+                <span>Longer stay</span>
+              </div>
+              <p>
+                A 5th-floor twin room that works well for two friends, event trips, and guests who prefer separate beds during their Tokyo stay.
+              </p>
+              <a href="https://www.airbnb.jp/rooms/1698319735996383815" class="btn" target="_blank" rel="noopener">View Room 503 on Airbnb</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="location">
+      <div class="container">
+        <div class="location-box">
+          <div class="section-head">
+            <div class="section-kicker">Location</div>
+            <h2>Convenient for food, drinks, shopping, and late-night plans.</h2>
+            <p class="lead">
+              The area around Kanamachi has convenience stores, casual restaurants, bars, ramen shops, supermarkets, drugstores, and other useful facilities for travelers.
+              It is also a convenient base for visiting Asakusa, Ueno, Akihabara, Tokyo Skytree, Tokyo Station, and other major areas.
+            </p>
+
+            <div class="notice">
+              Please read before booking: the neighborhood includes adult-oriented nighttime businesses and may have people coming and going late at night.
+              You may hear voices, daily-life sounds, or street noise. This stay is not recommended for guests looking for a quiet residential atmosphere,
+              a calm hotel-like environment, or a family-oriented stay.
+            </div>
+          </div>
+
+          <div class="access-list">
+            <div>Convenience stores</div>
+            <div>Restaurants</div>
+            <div>Bars & izakaya</div>
+            <div>Ramen shops</div>
+            <div>Supermarkets</div>
+            <div>Drugstores</div>
+            <div>Coin laundry nearby</div>
+            <div>Easy Tokyo access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Tokyo Night Guide</div>
+          <h2>A stay made for enjoying Tokyo after dark.</h2>
+          <p class="lead">
+            This landing page can grow into a simple travel guide for guests.
+            Add specific restaurant names, late-night food spots, station directions, and event access information to improve search traffic and conversion.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="guide-card">
+            <h3>Late-night food</h3>
+            <p>Guide guests to nearby convenience stores, ramen shops, fast food, and casual restaurants.</p>
+          </div>
+          <div class="guide-card">
+            <h3>After events</h3>
+            <p>Position the rooms as a practical base after concerts, sports games, festivals, and late dinners.</p>
+          </div>
+          <div class="guide-card">
+            <h3>Easy arrival</h3>
+            <p>Add photo-based walking directions from JR Kanamachi and Keisei Kanamachi to reduce guest anxiety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="flow">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">How it works</div>
+          <h2>Simple booking. Flexible stay.</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <strong>Choose your room</strong>
+          </div>
+          <div class="step">
+            <strong>Book on Airbnb</strong>
+          </div>
+          <div class="step">
+            <strong>Check the house rules</strong>
+          </div>
+          <div class="step">
+            <strong>Self check-in</strong>
+          </div>
+          <div class="step">
+            <strong>Enjoy Tokyo</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">FAQ</div>
+          <h2>Frequently asked questions</h2>
+        </div>
+
+        <div class="faq-wrap">
+          <details>
+            <summary>Can I check in late at night?</summary>
+            <p>Yes. The rooms use self check-in, which makes late arrival easier. Please check the exact instructions after booking.</p>
+          </details>
+
+          <details>
+            <summary>Is this good for a solo traveler?</summary>
+            <p>Yes. The rooms are practical for solo travelers and business travelers who want a private, apartment-style room.</p>
+          </details>
+
+          <details>
+            <summary>Is this good for two friends?</summary>
+            <p>Yes. Room 503 has twin beds, while Rooms 402 and 405 have double beds. Please choose the room that fits your travel style.</p>
+          </details>
+
+          <details>
+            <summary>Can women book this stay?</summary>
+            <p>Yes. Eligible adult guests are welcome. However, the surrounding area includes nighttime businesses, so please review the neighborhood information before booking.</p>
+          </details>
+
+          <details>
+            <summary>Is this recommended for families?</summary>
+            <p>This stay is best suited for adult solo travelers or small adult groups. It is not recommended for guests looking for a quiet, family-oriented environment.</p>
+          </details>
+
+          <details>
+            <summary>Is there an elevator?</summary>
+            <p>No. Rooms are on the 4th and 5th floors, and the building does not have an elevator.</p>
+          </details>
+
+          <details>
+            <summary>Can I stay for several nights?</summary>
+            <p>Yes. The rooms have useful amenities such as Wi-Fi, a refrigerator, a microwave, and a washing machine.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="cta">
+      <div class="container">
+        <div class="section-kicker">Book now</div>
+        <h2>Make Tokyo your night out.<br>Make this your private base.</h2>
+        <p>
+          Choose the room that fits your trip and check availability on Airbnb.
+        </p>
+
+        <div class="btn-row booking-buttons">
+          <a href="https://www.airbnb.jp/rooms/1698201420733348060" class="btn" target="_blank" rel="noopener">Check Room 402</a>
+          <a href="https://www.airbnb.jp/rooms/1698261858443655288" class="btn" target="_blank" rel="noopener">Check Room 405</a>
+          <a href="https://www.airbnb.jp/rooms/1698319735996383815" class="btn" target="_blank" rel="noopener">Check Room 503</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © Gold Town Kanamachi. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
