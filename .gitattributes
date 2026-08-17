@@ -1,0 +1,10 @@
+# 改行コードをLFに統一(混在防止。生成ファイルとの一致確認を安定させるため)
+*.html text eol=lf
+*.xml text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.jpg -text
+*.png -text
