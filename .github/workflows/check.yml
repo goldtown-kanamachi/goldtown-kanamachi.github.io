@@ -1,0 +1,37 @@
+# 検査ワークフロー(フェイルクローズ)
+# - PRと main への push で実行。デプロイは行わない(GitHub Pagesは従来どおりブランチから配信)。
+# - どれか1つでも失敗するとPRがマージできない=誤った内容が公開されない。
+# 注意: cronはUTC固定。JSTの予定はUTCに換算して書くこと(例: JST 6:15 → "15 21 * * *")。
+name: check
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 秘密情報スキャン (gitleaks・全履歴)
+        run: |
+          mkdir -p /tmp/gitleaks
+          curl -sL -o /tmp/gitleaks/gitleaks.tar.gz \
+            https://github.com/gitleaks/gitleaks/releases/download/v8.24.3/gitleaks_8.24.3_linux_x64.tar.gz
+          tar -xzf /tmp/gitleaks/gitleaks.tar.gz -C /tmp/gitleaks gitleaks
+          /tmp/gitleaks/gitleaks git --redact .
+
+      - name: rooms.json の検査
+        run: python3 scripts/validate.py
+
+      - name: ページ生成
+        run: python3 scripts/generate.py
+
+      - name: 生成結果とコミット内容の一致確認
+        run: |
+          git diff --exit-code index.html ja.html sitemap.xml || {
+            echo "::error::rooms.json とコミットされた HTML/sitemap が一致しません。scripts/generate.py を実行してコミットし直してください。"
+            exit 1
+          }
