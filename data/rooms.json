@@ -15,13 +15,13 @@
     }
   },
   "legal": {
-    "display": false,
-    "facility_name": null,
-    "operator_name": null,
-    "license_type": null,
-    "license_authority": null,
-    "address": null,
-    "note": "許可証の記載どおりの文言が確定し、掲載の裁定が出るまで display は false のまま。displayをtrueにする場合は全フィールド必須。"
+    "display": true,
+    "facility_name": "GOLDTOWN",
+    "operator_name": "株式会社Shenlong",
+    "license_type": "旅館・ホテル営業",
+    "license_authority": "葛飾区保健所長",
+    "address": "東京都葛飾区東金町一丁目19番8号",
+    "note": "2026-08-17 井口さん裁定: 掲載OK・許可日の併記なし。値は許可証の写し(Box 389193239725)の記載どおり。変更時は許可証と突き合わせること。"
   },
   "rooms": [
     {
@@ -30,22 +30,54 @@
       "is_new": false,
       "floor": 4,
       "airbnb_url": "https://www.airbnb.jp/rooms/1698201420733348060",
-      "license_number": null,
+      "license_number": "7葛保生環令第867号",
       "en": {
         "summary": "A compact private room for independent travelers, business trips, and guests who want a simple base near Kanamachi.",
-        "tags": ["4F", "Private room", "Solo traveler", "Business trip", "No elevator"]
+        "tags": [
+          "4F",
+          "Private room",
+          "Solo traveler",
+          "Business trip",
+          "No elevator"
+        ]
       },
       "ja": {
         "summary": "一人旅・出張・金町周辺の滞在拠点として使いやすい、コンパクトな完全個室です。",
-        "tags": ["4階", "完全個室", "一人旅", "出張", "エレベーターなし"]
+        "tags": [
+          "4階",
+          "完全個室",
+          "一人旅",
+          "出張",
+          "エレベーターなし"
+        ]
       },
       "photos": {
-        "main": {"src": "images/room-402-8.png", "alt_en": "Room 402 main photo", "alt_ja": "402号室 メイン写真"},
+        "main": {
+          "src": "images/room-402-8.png",
+          "alt_en": "Room 402 main photo",
+          "alt_ja": "402号室 メイン写真"
+        },
         "grid": [
-          {"src": "images/room-402-9.jpg", "alt_en": "Room 402 photo", "alt_ja": "402号室 photo"},
-          {"src": "images/room-402-10.png", "alt_en": "Room 402 photo", "alt_ja": "402号室 photo"},
-          {"src": "images/room-402-1.jpg", "alt_en": "Room 402 photo", "alt_ja": "402号室 photo"},
-          {"src": "images/room-402-3.jpg", "alt_en": "Room 402 photo", "alt_ja": "402号室 photo"}
+          {
+            "src": "images/room-402-9.jpg",
+            "alt_en": "Room 402 photo",
+            "alt_ja": "402号室 photo"
+          },
+          {
+            "src": "images/room-402-10.png",
+            "alt_en": "Room 402 photo",
+            "alt_ja": "402号室 photo"
+          },
+          {
+            "src": "images/room-402-1.jpg",
+            "alt_en": "Room 402 photo",
+            "alt_ja": "402号室 photo"
+          },
+          {
+            "src": "images/room-402-3.jpg",
+            "alt_en": "Room 402 photo",
+            "alt_ja": "402号室 photo"
+          }
         ]
       }
     },
@@ -55,22 +87,54 @@
       "is_new": false,
       "floor": 4,
       "airbnb_url": "https://www.airbnb.jp/rooms/1698261858443655288",
-      "license_number": null,
+      "license_number": "7葛保生環令第868号",
       "en": {
         "summary": "A clean 4th-floor room for guests who plan to enjoy Tokyo until late and return to a private space.",
-        "tags": ["4F", "Private room", "Late return", "Urban base", "No elevator"]
+        "tags": [
+          "4F",
+          "Private room",
+          "Late return",
+          "Urban base",
+          "No elevator"
+        ]
       },
       "ja": {
         "summary": "東京を夜まで楽しみ、個室で休みたい方に向いた4階のお部屋です。",
-        "tags": ["4階", "完全個室", "遅い帰着", "繁華街の拠点", "エレベーターなし"]
+        "tags": [
+          "4階",
+          "完全個室",
+          "遅い帰着",
+          "繁華街の拠点",
+          "エレベーターなし"
+        ]
       },
       "photos": {
-        "main": {"src": "images/room-405-1.png", "alt_en": "Room 405 main photo", "alt_ja": "405号室 メイン写真"},
+        "main": {
+          "src": "images/room-405-1.png",
+          "alt_en": "Room 405 main photo",
+          "alt_ja": "405号室 メイン写真"
+        },
         "grid": [
-          {"src": "images/room-405-2.png", "alt_en": "Room 405 photo", "alt_ja": "405号室 photo"},
-          {"src": "images/room-405-6.jpg", "alt_en": "Room 405 photo", "alt_ja": "405号室 photo"},
-          {"src": "images/room-405-4.jpg", "alt_en": "Room 405 photo", "alt_ja": "405号室 photo"},
-          {"src": "images/room-405-10.png", "alt_en": "Room 405 photo", "alt_ja": "405号室 photo"}
+          {
+            "src": "images/room-405-2.png",
+            "alt_en": "Room 405 photo",
+            "alt_ja": "405号室 photo"
+          },
+          {
+            "src": "images/room-405-6.jpg",
+            "alt_en": "Room 405 photo",
+            "alt_ja": "405号室 photo"
+          },
+          {
+            "src": "images/room-405-4.jpg",
+            "alt_en": "Room 405 photo",
+            "alt_ja": "405号室 photo"
+          },
+          {
+            "src": "images/room-405-10.png",
+            "alt_en": "Room 405 photo",
+            "alt_ja": "405号室 photo"
+          }
         ]
       }
     },
@@ -80,22 +144,56 @@
       "is_new": true,
       "floor": 5,
       "airbnb_url": "https://www.airbnb.jp/rooms/1698314777988848256",
-      "license_number": null,
+      "license_number": "7葛保生環令第869号",
       "en": {
         "summary": "A newly opened 5th-floor concept room with two single beds, designed for friends, business trips, and longer stays near Kanamachi.",
-        "tags": ["5F", "Entire apartment", "2 guests", "2 single beds", "Longer stay", "No elevator"]
+        "tags": [
+          "5F",
+          "Entire apartment",
+          "2 guests",
+          "2 single beds",
+          "Longer stay",
+          "No elevator"
+        ]
       },
       "ja": {
         "summary": "シングルベッド2台を備えた5階のコンセプトルーム。友人同士、出張、2名での連泊にも使いやすいお部屋です。",
-        "tags": ["5階", "まるまる貸切", "定員2名", "シングルベッド2台", "長期滞在", "エレベーターなし"]
+        "tags": [
+          "5階",
+          "まるまる貸切",
+          "定員2名",
+          "シングルベッド2台",
+          "長期滞在",
+          "エレベーターなし"
+        ]
       },
       "photos": {
-        "main": {"src": "images/room-501-1.png", "alt_en": "Room 501 with two single beds and a television", "alt_ja": "シングルベッド2台とテレビを備えた501号室"},
+        "main": {
+          "src": "images/room-501-1.png",
+          "alt_en": "Room 501 with two single beds and a television",
+          "alt_ja": "シングルベッド2台とテレビを備えた501号室"
+        },
         "grid": [
-          {"src": "images/room-501-2.png", "alt_en": "Room 501 kitchenette with refrigerator and microwave", "alt_ja": "501号室のミニキッチン・冷蔵庫・電子レンジ"},
-          {"src": "images/room-501-3.png", "alt_en": "Room 501 private bathroom", "alt_ja": "501号室の専用ユニットバス"},
-          {"src": "images/room-501-4.png", "alt_en": "Room 501 dining and workspace table", "alt_ja": "501号室のダイニング兼ワークスペース"},
-          {"src": "images/room-501-5.png", "alt_en": "Two single beds in Room 501", "alt_ja": "501号室のシングルベッド2台"}
+          {
+            "src": "images/room-501-2.png",
+            "alt_en": "Room 501 kitchenette with refrigerator and microwave",
+            "alt_ja": "501号室のミニキッチン・冷蔵庫・電子レンジ"
+          },
+          {
+            "src": "images/room-501-3.png",
+            "alt_en": "Room 501 private bathroom",
+            "alt_ja": "501号室の専用ユニットバス"
+          },
+          {
+            "src": "images/room-501-4.png",
+            "alt_en": "Room 501 dining and workspace table",
+            "alt_ja": "501号室のダイニング兼ワークスペース"
+          },
+          {
+            "src": "images/room-501-5.png",
+            "alt_en": "Two single beds in Room 501",
+            "alt_ja": "501号室のシングルベッド2台"
+          }
         ]
       }
     },
@@ -105,22 +203,54 @@
       "is_new": false,
       "floor": 5,
       "airbnb_url": "https://www.airbnb.jp/rooms/1698319735996383815",
-      "license_number": null,
+      "license_number": "7葛保生環令第870号",
       "en": {
         "summary": "A 5th-floor room that works well for friends, event trips, and guests who want a practical Tokyo base.",
-        "tags": ["5F", "Private room", "Friends", "Longer stay", "No elevator"]
+        "tags": [
+          "5F",
+          "Private room",
+          "Friends",
+          "Longer stay",
+          "No elevator"
+        ]
       },
       "ja": {
         "summary": "友人同士の旅行、イベント利用、数日間の滞在にも使いやすい5階のお部屋です。",
-        "tags": ["5階", "完全個室", "友人同士", "連泊", "エレベーターなし"]
+        "tags": [
+          "5階",
+          "完全個室",
+          "友人同士",
+          "連泊",
+          "エレベーターなし"
+        ]
       },
       "photos": {
-        "main": {"src": "images/room-503-1.jpg", "alt_en": "Room 503 main photo", "alt_ja": "503号室 メイン写真"},
+        "main": {
+          "src": "images/room-503-1.jpg",
+          "alt_en": "Room 503 main photo",
+          "alt_ja": "503号室 メイン写真"
+        },
         "grid": [
-          {"src": "images/room-503-2.png", "alt_en": "Room 503 photo", "alt_ja": "503号室 photo"},
-          {"src": "images/room-503-3.jpg", "alt_en": "Room 503 photo", "alt_ja": "503号室 photo"},
-          {"src": "images/room-503-8.jpg", "alt_en": "Room 503 photo", "alt_ja": "503号室 photo"},
-          {"src": "images/room-503-9.jpg", "alt_en": "Room 503 photo", "alt_ja": "503号室 photo"}
+          {
+            "src": "images/room-503-2.png",
+            "alt_en": "Room 503 photo",
+            "alt_ja": "503号室 photo"
+          },
+          {
+            "src": "images/room-503-3.jpg",
+            "alt_en": "Room 503 photo",
+            "alt_ja": "503号室 photo"
+          },
+          {
+            "src": "images/room-503-8.jpg",
+            "alt_en": "Room 503 photo",
+            "alt_ja": "503号室 photo"
+          },
+          {
+            "src": "images/room-503-9.jpg",
+            "alt_en": "Room 503 photo",
+            "alt_ja": "503号室 photo"
+          }
         ]
       }
     }
