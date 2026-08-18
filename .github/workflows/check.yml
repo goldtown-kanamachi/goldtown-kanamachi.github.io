@@ -29,9 +29,10 @@ jobs:
       - name: ページ生成
         run: python3 scripts/generate.py
 
-      - name: 生成結果とコミット内容の一致確認
+      - name: 生成結果とコミット内容の一致確認 (トップ・sitemap・個別ページ)
         run: |
-          git diff --exit-code index.html ja.html sitemap.xml || {
-            echo "::error::rooms.json とコミットされた HTML/sitemap が一致しません。scripts/generate.py を実行してコミットし直してください。"
+          git add -N rooms
+          git diff --exit-code index.html ja.html sitemap.xml rooms || {
+            echo "::error::rooms.json とコミットされた HTML/sitemap/個別ページ(rooms/)が一致しません。scripts/generate.py を実行してコミットし直してください。"
             exit 1
           }

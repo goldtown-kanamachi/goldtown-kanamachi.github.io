@@ -1,0 +1,7 @@
+# 改行コードはLFに統一(テキスト系)。画像はバイナリとして扱う。
+* text=auto eol=lf
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.ico binary

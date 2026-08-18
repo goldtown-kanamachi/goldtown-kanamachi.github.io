@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
-"""data/rooms.json の入力漏れ・誤りを検査する。
+"""data/rooms.json の入力漏れ・誤りと、生成済みページの整合を検査する。
 
 使い方:  python3 scripts/validate.py
 終了コード: 0 = 問題なし / 1 = エラーあり(公開を止める)
+
+検査内容:
+1. rooms.json の入力漏れ・形式誤り・画像ファイルの存在
+2. 客室個別ページ(rooms/)の整合:
+   - activeな部屋の日英ページが存在し、activeでない部屋のページが残っていないこと
+   - トップ両ページから各個別ページへのリンクがあること(非activeへのリンクが無いこと)
+   - 各HTMLが参照する画像(src / srcset)・ローカルリンクが実在すること
+   - 個別ページの canonical / hreflang(en・ja・x-default)が相互に正しいこと
+   - sitemap.xml にactiveな個別ページが載り、非activeが載っていないこと
 
 依存ライブラリなし(Python 3 標準ライブラリのみ)。
 """
@@ -17,6 +26,98 @@ errors = []
 
 def err(msg: str) -> None:
     errors.append(msg)
+
+
+def check_generated_pages(data: dict) -> None:
+    """生成済みHTML(トップ2+個別ページ)とsitemapの整合検査。"""
+    rooms = [r for r in data.get("rooms", []) if isinstance(r, dict)]
+    active = [r for r in rooms if r.get("active")]
+    inactive = [r for r in rooms if not r.get("active")]
+    base = str(data.get("site", {}).get("base_url", "")).rstrip("/")
+    rooms_dir = ROOT / "rooms"
+
+    # 1) 個別ページの存在(active=あり / 非active=なし)
+    expected = set()
+    for r in active:
+        num = r.get("room_number", "")
+        for name in (f"{num}.html", f"{num}-ja.html"):
+            expected.add(name)
+            if not (rooms_dir / name).is_file():
+                err(f"rooms/{name} がありません。scripts/generate.py を実行してください")
+    if rooms_dir.is_dir():
+        for p in sorted(rooms_dir.glob("*.html")):
+            if p.name not in expected:
+                err(f"rooms/{p.name} は現在activeな部屋のページではありません。scripts/generate.py を再実行して削除してください")
+
+    # 2) HTMLの画像参照・ローカルリンク検査
+    html_files = [ROOT / "index.html", ROOT / "ja.html"]
+    if rooms_dir.is_dir():
+        html_files += sorted(rooms_dir.glob("*.html"))
+    for hf in html_files:
+        if not hf.is_file():
+            err(f"{hf.name} がありません。scripts/generate.py を実行してください")
+            continue
+        html = hf.read_text(encoding="utf-8")
+        rel = hf.relative_to(ROOT)
+        for m in re.finditer(r'(?:src|srcset)="([^"]+)"', html):
+            url = m.group(1)
+            if url.startswith(("http://", "https://", "data:")):
+                continue
+            if not (hf.parent / url).is_file():
+                err(f"{rel}: 参照画像が存在しません: {url}")
+        for m in re.finditer(r'href="([^"#]+\.html)(?:#[^"]*)?"', html):
+            url = m.group(1)
+            if url.startswith(("http://", "https://")):
+                continue
+            if not (hf.parent / url).is_file():
+                err(f"{rel}: リンク先が存在しません: {url}")
+
+    # 3) トップ両ページから個別ページへのリンク
+    for page, suffix in (("index.html", ".html"), ("ja.html", "-ja.html")):
+        p = ROOT / page
+        if not p.is_file():
+            continue
+        html = p.read_text(encoding="utf-8")
+        for r in active:
+            num = r.get("room_number", "")
+            if f'href="rooms/{num}{suffix}"' not in html:
+                err(f"{page}: {num}号室の個別ページ(rooms/{num}{suffix})へのリンクがありません")
+        for r in inactive:
+            num = r.get("room_number", "")
+            if f"rooms/{num}.html" in html or f"rooms/{num}-ja.html" in html:
+                err(f"{page}: activeでない{num}号室の個別ページへのリンクが残っています")
+
+    # 4) 個別ページの canonical / hreflang 相互整合
+    for r in active:
+        num = r.get("room_number", "")
+        en_url = f"{base}/rooms/{num}.html"
+        ja_url = f"{base}/rooms/{num}-ja.html"
+        for name, canonical in ((f"{num}.html", en_url), (f"{num}-ja.html", ja_url)):
+            p = rooms_dir / name
+            if not p.is_file():
+                continue
+            html = p.read_text(encoding="utf-8")
+            if f'<link rel="canonical" href="{canonical}">' not in html:
+                err(f"rooms/{name}: canonical が {canonical} ではありません")
+            for hreflang, url in (("en", en_url), ("ja", ja_url), ("x-default", en_url)):
+                if f'<link rel="alternate" hreflang="{hreflang}" href="{url}">' not in html:
+                    err(f"rooms/{name}: hreflang={hreflang} が {url} を指していません")
+
+    # 5) sitemap.xml の個別ページ整合
+    sm_path = ROOT / "sitemap.xml"
+    if sm_path.is_file():
+        sm = sm_path.read_text(encoding="utf-8")
+        for r in active:
+            num = r.get("room_number", "")
+            for url in (f"{base}/rooms/{num}.html", f"{base}/rooms/{num}-ja.html"):
+                if f"<loc>{url}</loc>" not in sm:
+                    err(f"sitemap.xml: {url} がありません。scripts/generate.py を実行してください")
+        for r in inactive:
+            num = r.get("room_number", "")
+            if f"/rooms/{num}.html" in sm or f"/rooms/{num}-ja.html" in sm:
+                err(f"sitemap.xml: activeでない{num}号室のURLが残っています")
+    else:
+        err("sitemap.xml がありません。scripts/generate.py を実行してください")
 
 
 def main() -> int:
@@ -105,6 +206,8 @@ def main() -> int:
                     err(f"{where}: {k}(代替テキスト)が未入力です")
     if active_count == 0:
         err("activeな部屋が0件です。少なくとも1室は active: true にしてください")
+
+    check_generated_pages(data)
 
     if errors:
         print(f"NG: {len(errors)}件の問題があります", file=sys.stderr)

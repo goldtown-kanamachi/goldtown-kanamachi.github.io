@@ -19,4 +19,76 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/ja.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/" />
   </url>
+  <url>
+    <loc>https://goldtown-kanamachi.github.io/rooms/402.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://goldtown-kanamachi.github.io/rooms/402.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/rooms/402-ja.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/rooms/402.html" />
+  </url>
+  <url>
+    <loc>https://goldtown-kanamachi.github.io/rooms/402-ja.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://goldtown-kanamachi.github.io/rooms/402.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/rooms/402-ja.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/rooms/402.html" />
+  </url>
+  <url>
+    <loc>https://goldtown-kanamachi.github.io/rooms/405.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://goldtown-kanamachi.github.io/rooms/405.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/rooms/405-ja.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/rooms/405.html" />
+  </url>
+  <url>
+    <loc>https://goldtown-kanamachi.github.io/rooms/405-ja.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://goldtown-kanamachi.github.io/rooms/405.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/rooms/405-ja.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/rooms/405.html" />
+  </url>
+  <url>
+    <loc>https://goldtown-kanamachi.github.io/rooms/501.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://goldtown-kanamachi.github.io/rooms/501.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/rooms/501-ja.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/rooms/501.html" />
+  </url>
+  <url>
+    <loc>https://goldtown-kanamachi.github.io/rooms/501-ja.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://goldtown-kanamachi.github.io/rooms/501.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/rooms/501-ja.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/rooms/501.html" />
+  </url>
+  <url>
+    <loc>https://goldtown-kanamachi.github.io/rooms/503.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://goldtown-kanamachi.github.io/rooms/503.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/rooms/503-ja.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/rooms/503.html" />
+  </url>
+  <url>
+    <loc>https://goldtown-kanamachi.github.io/rooms/503-ja.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://goldtown-kanamachi.github.io/rooms/503.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://goldtown-kanamachi.github.io/rooms/503-ja.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://goldtown-kanamachi.github.io/rooms/503.html" />
+  </url>
 </urlset>
